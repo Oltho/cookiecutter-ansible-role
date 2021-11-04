@@ -1,0 +1,7 @@
+---
+- name: "Converge"
+  hosts: "all"
+  roles:
+    - role: "{{ cookiecutter.repo_name }}"
+      vars:
+        {{ cookiecutter.repo_name | replace('-', '_') }}_action: "install"

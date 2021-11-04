@@ -1,0 +1,6 @@
+---
+- include_tasks: install.yml
+  when: {{ cookiecutter.repo_name | replace('-', '_') }}_action == 'install'
+
+- include_tasks: uninstall.yml
+  when: {{ cookiecutter.repo_name | replace('-', '_') }}_action == 'uninstall'

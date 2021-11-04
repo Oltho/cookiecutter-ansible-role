@@ -1,0 +1,5 @@
+---
+- name: "install file"
+  file:
+    path: "/tmp/task_1.txt"
+    state: "touch"

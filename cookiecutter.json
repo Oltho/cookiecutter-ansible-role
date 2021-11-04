@@ -1,0 +1,7 @@
+{
+    "repo_name": "ansible-role-template",
+    "project_short_description": "Ansible role template that can handle multiple action with linting and testing.",
+    "author_full_name": "Thomas TRAN",
+    "galaxy_namespace": "{{ cookiecutter.author_full_name | lower | replace(' ', '_') }}",
+    "galaxy_description": "{{ cookiecutter.project_short_description }}"
+}

@@ -1,0 +1,20 @@
+---
+galaxy_info:
+  role_name: {{ cookiecutter.repo_name | replace("-", "_") }}
+  namespace: {{ cookiecutter.galaxy_namespace }}
+
+  author: {{ cookiecutter.author_full_name }}
+  description: {{ cookiecutter.galaxy_description }}  # yamllint disable-line rule:line-length
+
+  license: MIT
+
+  min_ansible_version: 2.10
+
+  platforms:
+    - name: ubuntu
+      versions:
+        - 20.04
+
+  galaxy_tags: []
+
+dependencies: []

@@ -1,0 +1,40 @@
+---
+dependency:
+  name: "galaxy"
+  enabled: false
+
+driver:
+  name: "docker"
+
+lint: |
+  set -e
+  yamllint .
+  flake8
+
+platforms:
+  - name: "{{ cookiecutter.repo_name }}-uninstall"
+    image: "ubuntu:20.04"
+    pre_build_image: false
+
+provisioner:
+  name: "ansible"
+  log: true
+
+verifier:
+  name: "testinfra"
+
+scenario:
+  test_sequence:
+    - dependency
+    - lint
+    - cleanup
+    - destroy
+    - syntax
+    - create
+    - prepare
+    - converge
+    - idempotence
+    - side_effect
+    - verify
+    - cleanup
+    - destroy
